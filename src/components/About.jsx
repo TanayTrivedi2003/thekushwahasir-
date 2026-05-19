@@ -49,7 +49,7 @@ export default function About() {
 
           <div className="about-stat">
 
-            <h3>710.6+</h3>
+            <h3>710.6M+</h3>
 
             <span>Followers</span>
 

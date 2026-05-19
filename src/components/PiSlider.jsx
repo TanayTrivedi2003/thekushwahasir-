@@ -52,7 +52,7 @@ export default function PiSlider() {
           display: flex;
           width: max-content;
           white-space: nowrap;
-          animation: scroll 200s linear infinite;
+          animation: scroll 300s linear infinite;
         }
 
         .pi-track span {
