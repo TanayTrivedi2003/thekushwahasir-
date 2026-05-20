@@ -60,57 +60,41 @@ export default function Reels() {
         </span>
 
         <h2 className="section-title">
-          REELS THAT
-EDUCATE
+          REELS THAT EDUCATE
         </h2>
 
       </div>
 
-      <div className="reels-slider">
+      <div className="reels-marquee">
 
-        <div className="reels-track">
+        <div className="reels-marquee-track">
 
-          {reels.map((reel, index) => (
+          {[...reels, ...reels, ...reels].map((reel, index) => (
 
             <a
               href={reel.link}
               target="_blank"
               rel="noreferrer"
-              className="reel-card"
+              className="modern-reel-card"
               key={index}
             >
 
               <video
-                className="reel-video"
                 src={reel.video}
+                className="modern-reel-video"
                 autoPlay
                 muted
                 loop
                 playsInline
               />
 
-            </a>
+              <div className="modern-reel-overlay">
 
-          ))}
+                <span>
+                  Watch Reel
+                </span>
 
-          {reels.map((reel, index) => (
-
-            <a
-              href={reel.link}
-              target="_blank"
-              rel="noreferrer"
-              className="reel-card"
-              key={`duplicate-${index}`}
-            >
-
-              <video
-                className="reel-video"
-                src={reel.video}
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
+              </div>
 
             </a>
 

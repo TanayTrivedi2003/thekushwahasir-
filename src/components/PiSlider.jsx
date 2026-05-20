@@ -25,7 +25,7 @@ export default function PiSlider() {
 
       </div>
 
-      <style jsx>{`
+      <style>{`
         .pi-container {
           display: flex;
           align-items: center;
