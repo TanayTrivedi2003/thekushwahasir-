@@ -2,47 +2,46 @@ export default function Videos() {
 
   const videos = [
 
-    {
-      title: "The Equation That Broke The Internet",
-      views: "24M Views",
+  {
+    title: "134 Hours Roadmap 2026-27",
 
-      embed: "https://www.youtube.com/embed/TnMbJqs0m7U",
+    embed: "https://www.youtube.com/embed/TnMbJqs0m7U",
 
-      youtube: "https://youtu.be/TnMbJqs0m7U"
-    },
+    youtube: "https://youtu.be/TnMbJqs0m7U"
+  },
 
-    {
-      title: "Why π Never Ends",
-      views: "18M Views",
+  {
+    title: "35 Marks Calculus Strategy",
 
-      embed: "https://www.youtube.com/embed/7JFMIMp25-8",
+    embed: "https://www.youtube.com/embed/7JFMIMp25-8",
 
-      youtube: "https://youtu.be/7JFMIMp25-8"
-    },
+    youtube: "https://youtu.be/7JFMIMp25-8"
+  },
 
-    {
-      title: "Can You Solve This?",
-      views: "12M Views",
+  {
+    title: "Increasing & Decreasing Functions",
 
-      embed: "https://www.youtube.com/embed/6QCprqoXGcc",
+    embed: "https://www.youtube.com/embed/6QCprqoXGcc",
 
-      youtube: "https://youtu.be/6QCprqoXGcc"
-    },
+    youtube: "https://youtu.be/6QCprqoXGcc"
+  },
 
-    {
-      title: "Mathematics Goes Viral",
-      views: "9M Views",
+  {
+    title: "NDA 1 Maths PYQ Revision",
 
-      embed: "https://www.youtube.com/embed/qDZbr6iMqqs",
+    embed: "https://www.youtube.com/embed/qDZbr6iMqqs",
 
-      youtube: "https://youtu.be/qDZbr6iMqqs"
-    }
+    youtube: "https://youtu.be/qDZbr6iMqqs"
+  }
 
-  ];
+];
 
   return (
 
-    <section id="media" className="videos-section">
+    <section
+      id="media"
+      className="videos-section"
+    >
 
       <div className="videos-top">
 
@@ -72,15 +71,16 @@ export default function Videos() {
               src={video.embed}
               title={video.title}
               className="youtube-video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
 
             <div className="video-info">
 
-              <h3>{video.title}</h3>
-
-              <p>{video.views}</p>
+              <h3>
+                {video.title}
+              </h3>
 
             </div>
 

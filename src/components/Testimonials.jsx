@@ -1,11 +1,31 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+import {
+  FaChevronLeft,
+  FaChevronRight
+} from "react-icons/fa";
+
 export default function Testimonials() {
+
+  const comments = [
+
+  "/comment.jpeg",
+  "/comment2.jpeg",
+  "/comment3.jpeg",
+  "/comment4.jpeg",
+  "/comment5.jpeg",
+  "/comment6.jpeg"
+
+];
 
   return (
 
-    <section
-      className="testimonials-section"
-      id="media"
-    >
+    <section className="testimonials-section">
 
       <div className="testimonials-top">
 
@@ -19,45 +39,73 @@ export default function Testimonials() {
 
       </div>
 
-      <div className="testimonials-wrapper">
+      {/* ARROWS */}
 
-        {/* LEFT COLUMN */}
+      <div className="testimonial-nav">
 
-        <div className="testimonial-column">
+        <button className="testimonial-prev">
+          <FaChevronLeft />
+        </button>
 
-          <div className="testimonial-card">
-            <img
-              src="/comment2.jpeg"
-              alt="Comment"
-              className="testimonial-image"
-            />
-          </div>
-
-          <div className="testimonial-card">
-            <img
-              src="/comment3.jpeg"
-              alt="Comment"
-              className="testimonial-image"
-            />
-          </div>
-
-        </div>
-
-        {/* RIGHT COLUMN */}
-
-        <div className="testimonial-column">
-
-          <div className="testimonial-card">
-            <img
-              src="/comment.jpeg"
-              alt="Comment"
-              className="testimonial-image"
-            />
-          </div>
-
-        </div>
+        <button className="testimonial-next">
+          <FaChevronRight />
+        </button>
 
       </div>
+
+      {/* SWIPER */}
+
+      <Swiper
+
+        modules={[Navigation]}
+
+        navigation={{
+          prevEl: ".testimonial-prev",
+          nextEl: ".testimonial-next"
+        }}
+
+        spaceBetween={30}
+
+        loop={true}
+
+        breakpoints={{
+
+          0:{
+            slidesPerView:1
+          },
+
+          768:{
+            slidesPerView:1.3
+          },
+
+          1024:{
+            slidesPerView:2
+          }
+
+        }}
+
+        className="testimonial-swiper"
+      >
+
+        {comments.map((comment, index) => (
+
+          <SwiperSlide key={index}>
+
+            <div className="testimonial-card">
+
+              <img
+                src={comment}
+                alt="Student Comment"
+                className="testimonial-image"
+              />
+
+            </div>
+
+          </SwiperSlide>
+
+        ))}
+
+      </Swiper>
 
     </section>
   );
