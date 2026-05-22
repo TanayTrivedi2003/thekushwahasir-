@@ -71,7 +71,7 @@ export default function FooterCTA() {
 
           <div className="footer-stat-card">
 
-            <h3>2.4B+</h3>
+            <h3>5M+</h3>
 
             <span>Total Views</span>
 
@@ -79,9 +79,9 @@ export default function FooterCTA() {
 
           <div className="footer-stat-card">
 
-            <h3>577K+</h3>
+            <h3>733.7K+</h3>
 
-            <span>Followers</span>
+            <span>Total Followers</span>
 
           </div>
 

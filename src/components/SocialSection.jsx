@@ -10,9 +10,9 @@ export default function SocialSection() {
 
   /* TOTAL VIEWS */
 
-  const [views, setViews] = useState(100000000);
+  const [views, setViews] = useState(1000000);
 
-  /* ULTRA FAST TOTAL VIEW COUNTER */
+  /* LIVE TOTAL VIEW COUNTER */
 
   useEffect(() => {
 
@@ -20,11 +20,11 @@ export default function SocialSection() {
 
       setViews(prev => {
 
-        if(prev >= 2400000000){
-          return 2400000000;
+        if(prev >= 5000000){
+          return 5000000;
         }
 
-        return prev + Math.floor(Math.random() * 5000000);
+        return prev + Math.floor(Math.random() * 50000);
 
       });
 
@@ -101,7 +101,7 @@ export default function SocialSection() {
           <p>@thekushwahasir</p>
 
           <div className="social-number">
-            577<small>K</small>
+            596<small>K</small>
           </div>
 
           <span>Followers</span>
@@ -121,7 +121,7 @@ export default function SocialSection() {
           <p>The Kushwaha Sir</p>
 
           <div className="social-number">
-            92.6<small>K</small>
+            98.7<small>K</small>
           </div>
 
           <span>Subscribers</span>
@@ -141,7 +141,7 @@ export default function SocialSection() {
           <p>thekushwahasir1</p>
 
           <div className="social-number">
-            35<small>K</small>
+            39<small>K</small>
           </div>
 
           <span>Followers</span>

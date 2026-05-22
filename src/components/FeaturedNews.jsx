@@ -1,3 +1,12 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import {
+  Autoplay,
+  FreeMode
+} from "swiper/modules";
+
+import "swiper/css";
+
 export default function FeaturedNews() {
 
   const newsLinks = [
@@ -92,18 +101,49 @@ export default function FeaturedNews() {
 
       </div>
 
-      <div className="news-slider">
+      <Swiper
 
-        <div className="news-track">
+        modules={[
+          Autoplay,
+          FreeMode
+        ]}
 
-          {[...newsLinks, ...newsLinks].map((item, index) => (
+        slidesPerView={"auto"}
+
+        spaceBetween={30}
+
+        loop={true}
+
+        freeMode={true}
+
+        grabCursor={true}
+
+        speed={5000}
+
+        autoplay={{
+
+          delay:0,
+
+          disableOnInteraction:false,
+
+          pauseOnMouseEnter:true
+        }}
+
+        className="news-swiper"
+      >
+
+        {newsLinks.map((item, index) => (
+
+          <SwiperSlide
+            key={index}
+            className="news-slide"
+          >
 
             <a
               href={item.link}
               target="_blank"
               rel="noreferrer"
               className="news-logo-card"
-              key={index}
             >
 
               <img
@@ -114,11 +154,11 @@ export default function FeaturedNews() {
 
             </a>
 
-          ))}
+          </SwiperSlide>
 
-        </div>
+        ))}
 
-      </div>
+      </Swiper>
 
     </section>
   );

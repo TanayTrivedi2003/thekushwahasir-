@@ -1,27 +1,27 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Autoplay
+} from "swiper/modules";
+
+import { motion } from "framer-motion";
 
 import "swiper/css";
-import "swiper/css/navigation";
-
-import {
-  FaChevronLeft,
-  FaChevronRight
-} from "react-icons/fa";
+import "swiper/css/effect-coverflow";
 
 export default function Testimonials() {
 
   const comments = [
 
-  "/comment.jpeg",
-  "/comment2.jpeg",
-  "/comment3.jpeg",
-  "/comment4.jpeg",
-  "/comment5.jpeg",
-  "/comment6.jpeg"
+    "/comment.jpeg",
+    "/comment2.jpeg",
+    "/comment3.jpeg",
+    "/comment4.jpeg",
+    "/comment5.jpeg",
+    "/comment6.jpeg"
 
-];
+  ];
 
   return (
 
@@ -39,50 +39,36 @@ export default function Testimonials() {
 
       </div>
 
-      {/* ARROWS */}
-
-      <div className="testimonial-nav">
-
-        <button className="testimonial-prev">
-          <FaChevronLeft />
-        </button>
-
-        <button className="testimonial-next">
-          <FaChevronRight />
-        </button>
-
-      </div>
-
-      {/* SWIPER */}
-
       <Swiper
 
-        modules={[Navigation]}
+        effect={"coverflow"}
 
-        navigation={{
-          prevEl: ".testimonial-prev",
-          nextEl: ".testimonial-next"
-        }}
+        grabCursor={true}
 
-        spaceBetween={30}
+        centeredSlides={true}
 
         loop={true}
 
-        breakpoints={{
+        slidesPerView={"auto"}
 
-          0:{
-            slidesPerView:1
-          },
-
-          768:{
-            slidesPerView:1.3
-          },
-
-          1024:{
-            slidesPerView:2
-          }
-
+        autoplay={{
+          delay:2500,
+          disableOnInteraction:false
         }}
+
+        coverflowEffect={{
+          rotate:0,
+          stretch:0,
+          depth:180,
+          modifier:2,
+          scale:0.9,
+          slideShadows:false
+        }}
+
+        modules={[
+          EffectCoverflow,
+          Autoplay
+        ]}
 
         className="testimonial-swiper"
       >
@@ -91,7 +77,30 @@ export default function Testimonials() {
 
           <SwiperSlide key={index}>
 
-            <div className="testimonial-card">
+            <motion.div
+
+              initial={{
+                opacity:0,
+                scale:0.85,
+                y:60
+              }}
+
+              whileInView={{
+                opacity:1,
+                scale:1,
+                y:0
+              }}
+
+              transition={{
+                duration:0.8
+              }}
+
+              viewport={{
+                once:true
+              }}
+
+              className="testimonial-card"
+            >
 
               <img
                 src={comment}
@@ -99,7 +108,7 @@ export default function Testimonials() {
                 className="testimonial-image"
               />
 
-            </div>
+            </motion.div>
 
           </SwiperSlide>
 
