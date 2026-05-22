@@ -1542,142 +1542,100 @@ RESPONSIVE
 
 
 
-
-
-/* VIDEOS SECTION */
+/* =========================================================
+VIDEOS SECTION
+========================================================= */
 
 .videos-section{
-  padding:160px 70px;
+
+  position:relative;
+
+  padding:140px 0;
+
+  overflow:hidden;
 
   background:
-    linear-gradient(
-      180deg,
-      #05050a,
-      #080810
-    );
+  linear-gradient(
+    180deg,
+    #05050a,
+    #090914
+  );
 }
 
 /* TOP */
 
 .videos-top{
-  margin-bottom:90px;
+
+  padding:0 70px;
+
+  margin-bottom:70px;
 }
 
-/* GRID */
+/* SWIPER */
 
-.videos-grid{
-  display:grid;
+.videos-swiper{
 
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
+  width:100%;
 
-  gap:42px;
+  padding-top:30px;
+
+  padding-bottom:90px;
+
+  overflow:visible !important;
+}
+
+/* SLIDE */
+
+.video-slide{
+
+  width:720px;
 }
 
 /* CARD */
 
 .video-card{
+
   position:relative;
+
+  display:block;
 
   overflow:hidden;
 
-  border-radius:36px;
+  border-radius:34px;
 
-  text-decoration:none;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
-    );
+  background:#090909;
 
   border:1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(20px);
+  transition:0.5s ease;
 
-  transition:0.45s ease;
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,0.35);
-
-  display:block;
-}
-
-.video-card:hover{
-  transform:
-    translateY(-12px)
-    scale(1.015);
-
-  border-color:
-    rgba(139,92,246,0.25);
+  cursor:grab;
 
   box-shadow:
-    0 30px 90px rgba(139,92,246,0.15);
+  0 25px 80px rgba(0,0,0,0.45);
+
+  text-decoration:none;
 }
 
-/* VIDEO */
-
-.youtube-video{
-  width:100%;
-
-  aspect-ratio:16/9;
-
-  border:none;
-
-  display:block;
-
-  background:black;
-
-  pointer-events:none;
-}
-
-/* INFO */
-
-.video-info{
-  padding:32px;
-}
-
-.video-info h3{
-  font-size:34px;
-
-  line-height:1.15;
-
-  margin-bottom:12px;
-
-  font-weight:700;
-
-  letter-spacing:-0.04em;
-
-  color:white;
-}
-
-.video-info p{
-  color:rgba(255,255,255,0.65);
-
-  font-size:15px;
-
-  font-weight:500;
-}
-
-/* HOVER GLOW */
+/* GLOW */
 
 .video-card::before{
+
   content:"";
 
   position:absolute;
 
-  inset:-1px;
+  inset:-2px;
 
-  border-radius:36px;
+  border-radius:34px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(139,92,246,0.4),
-      transparent,
-      rgba(96,165,250,0.25)
-    );
+  linear-gradient(
+    135deg,
+    rgba(139,92,246,0.5),
+    transparent,
+    rgba(139,92,246,0.3)
+  );
 
   opacity:0;
 
@@ -1686,63 +1644,191 @@ RESPONSIVE
   z-index:-1;
 }
 
+/* HOVER */
+
+.video-card:hover{
+
+  transform:
+  translateY(-12px)
+  scale(1.02);
+
+  border-color:
+  rgba(139,92,246,0.35);
+
+  box-shadow:
+  0 35px 120px rgba(139,92,246,0.35);
+}
+
 .video-card:hover::before{
+
   opacity:1;
 }
 
-/* PLAY ICON */
+/* VIDEO */
 
-.video-card::after{
-  content:"▶";
+.youtube-video{
 
-  position:absolute;
+  width:100%;
 
-  top:24px;
-  right:24px;
+  height:420px;
 
-  width:68px;
-  height:68px;
+  border:none;
 
-  border-radius:50%;
+  transition:0.6s ease;
+}
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.video-card:hover .youtube-video{
 
-  background:rgba(255,255,255,0.12);
+  transform:scale(1.03);
+}
 
-  backdrop-filter:blur(20px);
+/* INFO */
+
+.video-info{
+
+  padding:30px;
+}
+
+.video-info h3{
 
   color:white;
 
-  font-size:24px;
+  font-size:28px;
 
-  transition:0.4s ease;
+  font-weight:800;
+
+  line-height:1.2;
 }
 
-.video-card:hover::after{
-  transform:scale(1.1);
+/* ACTIVE */
+
+.swiper-slide-active{
+
+  animation:
+  floatVideo 4s ease-in-out infinite;
 }
 
-/* RESPONSIVE */
+/* PAGINATION */
 
-@media(max-width:900px){
+.swiper-pagination-bullet{
 
-  .videos-section{
-    padding:120px 24px;
+  width:10px;
+  height:10px;
+
+  background:
+  rgba(255,255,255,0.3);
+
+  opacity:1;
+}
+
+.swiper-pagination-bullet-active{
+
+  width:28px;
+
+  border-radius:999px;
+
+  background:#8b5cf6;
+}
+
+/* FLOAT */
+
+@keyframes floatVideo{
+
+  0%{
+    transform:translateY(0px);
   }
 
-  .videos-grid{
-    grid-template-columns:1fr;
+  50%{
+    transform:translateY(-10px);
+  }
 
-    gap:28px;
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .video-slide{
+
+    width:620px;
+  }
+
+  .youtube-video{
+
+    height:360px;
   }
 
   .video-info h3{
-    font-size:26px;
+
+    font-size:24px;
   }
 }
 
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .videos-section{
+
+    padding:100px 0;
+  }
+
+  .videos-top{
+
+    padding:0 20px;
+
+    margin-bottom:50px;
+  }
+
+  .video-slide{
+
+    width:88%;
+  }
+
+  .youtube-video{
+
+    height:240px;
+  }
+
+  .video-info{
+
+    padding:20px;
+  }
+
+  .video-info h3{
+
+    font-size:20px;
+  }
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .video-slide{
+
+    width:92%;
+  }
+
+  .youtube-video{
+
+    height:210px;
+  }
+
+  .video-info h3{
+
+    font-size:18px;
+  }
+}
 
 
 /* ABOUT SECTION */
@@ -2046,49 +2132,55 @@ RESPONSIVE
 
 
 
-
 /* =========================================================
-TESTIMONIALS
+TESTIMONIALS SECTION
 ========================================================= */
 
 .testimonials-section{
 
-  padding:140px 70px;
-
   position:relative;
 
+  padding:140px 0;
+
   overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #05050a,
+    #090914
+  );
 }
 
 /* TOP */
 
 .testimonials-top{
 
+  padding:0 70px;
+
   margin-bottom:60px;
 }
 
 /* NAVIGATION */
 
-.testimonial-nav{
-
-  position:absolute;
-
-  top:150px;
-
-  right:70px;
+.testimonial-navigation{
 
   display:flex;
 
-  gap:14px;
+  align-items:center;
 
-  z-index:20;
+  justify-content:center;
+
+  gap:20px;
+
+  margin-bottom:50px;
 }
 
 .testimonial-prev,
 .testimonial-next{
 
-  width:54px;
-  height:54px;
+  width:60px;
+  height:60px;
 
   border:none;
 
@@ -2098,29 +2190,38 @@ TESTIMONIALS
 
   color:white;
 
-  font-size:18px;
+  font-size:20px;
 
   background:
   rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(20px);
 
   border:1px solid rgba(255,255,255,0.08);
 
-  transition:0.35s ease;
+  transition:0.4s ease;
 }
 
 .testimonial-prev:hover,
 .testimonial-next:hover{
 
+  transform:
+  translateY(-5px)
+  scale(1.08);
+
   background:#8b5cf6;
 
-  transform:translateY(-4px);
+  box-shadow:
+  0 15px 40px rgba(139,92,246,0.4);
 }
 
 /* SWIPER */
 
 .testimonial-swiper{
+
+  width:100%;
+
+  max-width:520px;
 
   overflow:visible !important;
 }
@@ -2129,29 +2230,20 @@ TESTIMONIALS
 
 .testimonial-card{
 
-  border-radius:28px;
+  width:100%;
+
+  border-radius:34px;
 
   overflow:hidden;
 
-  background:#0b0b12;
+  background:#0f0f15;
 
-  border:1px solid rgba(255,255,255,0.06);
-
-  transition:0.4s ease;
+  border:1px solid rgba(255,255,255,0.08);
 
   box-shadow:
-  0 20px 60px rgba(0,0,0,0.35);
-}
+  0 30px 100px rgba(0,0,0,0.45);
 
-.testimonial-card:hover{
-
-  transform:translateY(-10px);
-
-  border-color:
-  rgba(139,92,246,0.35);
-
-  box-shadow:
-  0 25px 80px rgba(139,92,246,0.18);
+  transition:0.45s ease;
 }
 
 /* IMAGE */
@@ -2165,20 +2257,31 @@ TESTIMONIALS
   object-fit:cover;
 }
 
+/* ACTIVE CARD */
+
+.swiper-slide-active .testimonial-card{
+
+  transform:
+  scale(1.03);
+
+  box-shadow:
+  0 30px 100px rgba(139,92,246,0.35);
+}
+
 /* =========================================================
 TABLET
 ========================================================= */
 
 @media(max-width:992px){
 
-  .testimonials-section{
+  .testimonial-swiper{
 
-    padding:120px 30px;
+    max-width:440px;
   }
 
-  .testimonial-nav{
+  .testimonials-top{
 
-    right:30px;
+    padding:0 30px;
   }
 }
 
@@ -2190,30 +2293,52 @@ MOBILE
 
   .testimonials-section{
 
-    padding:100px 20px;
+    padding:100px 0;
   }
 
-  .testimonial-nav{
+  .testimonials-top{
 
-    position:relative;
+    padding:0 20px;
 
-    top:auto;
-    right:auto;
+    margin-bottom:40px;
+  }
 
-    margin-bottom:30px;
+  .testimonial-swiper{
 
-    justify-content:center;
+    max-width:320px;
   }
 
   .testimonial-prev,
   .testimonial-next{
 
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
 
     font-size:16px;
   }
+
+  .testimonial-card{
+
+    border-radius:26px;
+  }
 }
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .testimonial-swiper{
+
+    max-width:280px;
+  }
+}
+
+
+
+
+
 /* =========================
 FOOTER CTA
 ========================= */
@@ -3013,86 +3138,78 @@ EXTRA MOBILE RESPONSIVE
     border-radius:22px;
   }
 
- /* =========================
-TESTIMONIAL SECTION
-========================= */
+/* =========================================================
+TESTIMONIALS SECTION
+========================================================= */
 
 .testimonials-section{
 
   position:relative;
 
-  padding:140px 70px;
+  padding:140px 0;
 
   overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #05050a,
+    #090914
+  );
 }
 
-/* =========================
-TOP
-========================= */
+/* TOP */
 
 .testimonials-top{
+
+  padding:0 70px;
 
   margin-bottom:70px;
 }
 
-/* =========================
-GRID
-========================= */
+/* =========================================================
+SWIPER
+========================================================= */
 
-.testimonials-grid{
+.testimonial-swiper{
 
-  display:grid;
+  width:100%;
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(420px,1fr));
+  overflow:visible !important;
 
-  gap:34px;
-
-  align-items:start;
+  padding-bottom:40px;
 }
 
-/* =========================
-IMAGE CARD
-========================= */
+/* SLIDE */
 
-.testimonial-image-card{
+.testimonial-swiper .swiper-slide{
 
-  position:relative;
+  width:700px;
 
-  overflow:hidden;
+  transition:0.5s ease;
+}
+
+/* CARD */
+
+.testimonial-card{
+
+  width:100%;
 
   border-radius:34px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.04),
-      rgba(10,10,20,0.96)
-    );
+  overflow:hidden;
 
-  border:1px solid rgba(255,255,255,0.06);
+  background:#0f0f15;
 
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.08);
 
-  transition:0.4s ease;
-}
-
-/* HOVER */
-
-.testimonial-image-card:hover{
-
-  transform:translateY(-8px);
-
-  border-color:rgba(139,92,246,0.35);
+  transition:0.45s ease;
 
   box-shadow:
-    0 20px 70px rgba(139,92,246,0.16);
+  0 30px 100px rgba(0,0,0,0.45);
 }
 
-/* =========================
-IMAGE
-========================= */
+/* IMAGE */
 
 .testimonial-image{
 
@@ -3101,31 +3218,96 @@ IMAGE
   display:block;
 
   object-fit:cover;
+
+  border-radius:34px;
 }
 
-/* =========================
+/* ACTIVE */
+
+.swiper-slide-active .testimonial-card{
+
+  transform:
+  scale(1.03);
+
+  box-shadow:
+  0 35px 120px rgba(139,92,246,0.3);
+}
+
+/* SIDE SLIDES */
+
+.swiper-slide-prev,
+.swiper-slide-next{
+
+  opacity:0.45;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .testimonials-top{
+
+    padding:0 30px;
+  }
+
+  .testimonial-swiper .swiper-slide{
+
+    width:560px;
+  }
+}
+
+/* =========================================================
 MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:768px){
 
   .testimonials-section{
 
-    padding:100px 24px;
+    padding:100px 0;
   }
 
-  .testimonials-grid{
+  .testimonials-top{
 
-    grid-template-columns:1fr;
+    padding:0 20px;
 
-    gap:24px;
+    margin-bottom:50px;
   }
 
-  .testimonial-image-card{
+  .testimonial-swiper .swiper-slide{
+
+    width:88%;
+  }
+
+  .testimonial-card{
+
+    border-radius:24px;
+  }
+
+  .testimonial-image{
 
     border-radius:24px;
   }
 }
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .testimonial-swiper .swiper-slide{
+
+    width:92%;
+  }
+}
+
+
+
+
+
 
   /* FOOTER */
 
@@ -3638,9 +3820,9 @@ MOBILE
 
 
 
-/* =========================
+/* =========================================================
 FEATURED NEWS
-========================= */
+========================================================= */
 
 .featured-news-section{
 
@@ -3651,9 +3833,9 @@ FEATURED NEWS
   overflow:hidden;
 }
 
-/* =========================
+/* =========================================================
 TOP
-========================= */
+========================================================= */
 
 .featured-news-top{
 
@@ -3662,50 +3844,37 @@ TOP
   margin-bottom:70px;
 }
 
-/* =========================
-SLIDER
-========================= */
+/* =========================================================
+SWIPER
+========================================================= */
 
-.news-slider{
+.news-swiper{
 
-  width:100%;
+  overflow:visible !important;
 
-  overflow:hidden;
-
-  position:relative;
+  padding-bottom:20px;
 }
 
-/* =========================
-TRACK
-========================= */
+/* =========================================================
+SLIDE
+========================================================= */
 
-.news-track{
+.news-slide{
 
-  display:flex;
-
-  align-items:center;
-
-  gap:34px;
-
-  width:max-content;
-
-  animation:
-    newsSlide 34s linear infinite;
+  width:260px !important;
 }
 
-/* =========================
+/* =========================================================
 CARD
-========================= */
+========================================================= */
 
 .news-logo-card{
 
-  width:230px;
+  width:100%;
 
-  height:120px;
+  height:130px;
 
-  flex-shrink:0;
-
-  border-radius:28px;
+  border-radius:30px;
 
   background:white;
 
@@ -3715,33 +3884,35 @@ CARD
 
   justify-content:center;
 
-  padding:20px;
+  padding:24px;
 
-  transition:0.35s ease;
+  transition:0.4s ease;
 
   box-shadow:
-    0 12px 40px rgba(0,0,0,0.16);
+  0 14px 50px rgba(0,0,0,0.18);
 
   text-decoration:none;
+
+  cursor:grab;
 }
 
-/* =========================
+/* =========================================================
 HOVER
-========================= */
+========================================================= */
 
 .news-logo-card:hover{
 
   transform:
-    translateY(-8px)
-    scale(1.04);
+  translateY(-10px)
+  scale(1.04);
 
   box-shadow:
-    0 20px 60px rgba(139,92,246,0.2);
+  0 25px 80px rgba(139,92,246,0.22);
 }
 
-/* =========================
+/* =========================================================
 LOGO
-========================= */
+========================================================= */
 
 .news-logo{
 
@@ -3750,26 +3921,40 @@ LOGO
   height:100%;
 
   object-fit:contain;
+
+  transition:0.4s ease;
 }
 
-/* =========================
-ANIMATION
-========================= */
+.news-logo-card:hover .news-logo{
 
-@keyframes newsSlide{
+  transform:scale(1.05);
+}
 
-  from{
-    transform:translateX(0);
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .featured-news-top{
+
+    padding:0 30px;
   }
 
-  to{
-    transform:translateX(-50%);
+  .news-slide{
+
+    width:220px !important;
+  }
+
+  .news-logo-card{
+
+    height:115px;
   }
 }
 
-/* =========================
+/* =========================================================
 MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:768px){
 
@@ -3780,29 +3965,44 @@ MOBILE
 
   .featured-news-top{
 
-    padding:0 24px;
+    padding:0 20px;
 
     margin-bottom:50px;
   }
 
-  .news-track{
+  .news-slide{
 
-    gap:18px;
+    width:180px !important;
   }
 
   .news-logo-card{
 
-    width:160px;
-
     height:90px;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:14px;
+    padding:16px;
   }
 }
 
+/* =========================================================
+SMALL MOBILE
+========================================================= */
 
+@media(max-width:480px){
+
+  .news-slide{
+
+    width:160px !important;
+  }
+
+  .news-logo-card{
+
+    height:80px;
+
+    border-radius:18px;
+  }
+}
 
 
 

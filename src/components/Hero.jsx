@@ -57,28 +57,17 @@ export default function Hero() {
 
           <div className="image-glow"></div>
 
-          {/* FLOATING BADGE */}
-          <div className="floating-badge">
-
-            <div className="badge-number">
-              137M+
-            </div>
-
-            <div className="badge-text">
-              Monthly Reach
-            </div>
-
-          </div>
+          
 
           {/* SECOND CARD */}
           <div className="floating-card-2">
 
             <div className="card-label">
-              Student Reach
+              Total Views
             </div>
 
             <div className="card-value">
-              2.4M+
+              5M+
             </div>
 
           </div>
