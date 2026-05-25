@@ -1,3 +1,194 @@
+// import { useEffect, useState } from "react";
+
+// import {
+//   FaInstagram,
+//   FaYoutube,
+//   FaFacebookF
+// } from "react-icons/fa";
+
+// export default function SocialSection() {
+
+//   /* TOTAL VIEWS */
+
+//  const [views, setViews] = useState(180000000);
+
+//   /* LIVE TOTAL VIEW COUNTER */
+
+//   useEffect(() => {
+
+//     const interval = setInterval(() => {
+
+//       setViews(prev => {
+
+//       if (prev >= 180000000) {
+//   return 180000000;
+// }
+
+//         return prev + Math.floor(Math.random() * 50000);
+
+//       });
+
+//     }, 10);
+
+//     return () => clearInterval(interval);
+
+//   }, []);
+
+//   /* FORMAT TOTAL VIEWS */
+
+//   const formatViews = (num) => {
+
+//     if(num >= 1000000000){
+
+//       return (
+//         (num / 1000000000)
+//         .toFixed(1)
+//         + "B+"
+//       );
+//     }
+
+//     if(num >= 1000000){
+
+//       return (
+//         (num / 1000000)
+//         .toFixed(1)
+//         + "M+"
+//       );
+//     }
+
+//     if(num >= 1000){
+
+//       return (
+//         (num / 1000)
+//         .toFixed(1)
+//         + "K+"
+//       );
+//     }
+
+//     return num;
+//   };
+
+//   return (
+
+//     <section className="social-section" id="social">
+
+//       <div className="section-top">
+
+//         <span className="section-label">
+//           Social Presence
+//         </span>
+
+//         <h2 className="section-title">
+//           Dominating Every Platform
+//         </h2>
+
+//       </div>
+
+//       {/* SOCIAL GRID */}
+
+//       <div className="social-grid">
+
+//         {/* INSTAGRAM */}
+
+//         <div className="social-card">
+
+//           <div className="social-icon instagram">
+//             <FaInstagram />
+//           </div>
+
+//           <h3>Instagram</h3>
+
+//           <p>@thekushwahasir</p>
+
+//           <div className="social-number">
+//             596<small>K</small>
+//           </div>
+
+//           <span>Followers</span>
+
+//         </div>
+
+//         {/* YOUTUBE */}
+
+//         <div className="social-card">
+
+//           <div className="social-icon youtube">
+//             <FaYoutube />
+//           </div>
+
+//           <h3>YouTube</h3>
+
+//           <p>The Kushwaha Sir</p>
+
+//           <div className="social-number">
+//             98.7<small>K</small>
+//           </div>
+
+//           <span>Subscribers</span>
+
+//         </div>
+
+//         {/* FACEBOOK */}
+
+//         <div className="social-card">
+
+//           <div className="social-icon facebook">
+//             <FaFacebookF />
+//           </div>
+
+//           <h3>Facebook</h3>
+
+//           <p>thekushwahasir1</p>
+
+//           <div className="social-number">
+//             39<small>K</small>
+//           </div>
+
+//           <span>Followers</span>
+
+//         </div>
+
+//       </div>
+
+//       {/* BIG STATS */}
+
+//       <div className="mega-stats">
+
+//         <div className="mega-card">
+
+//           <h4 className="live-counter">
+//             {formatViews(views)}
+//           </h4>
+
+//           <span>Total Views</span>
+
+//         </div>
+
+//         <div className="mega-card">
+
+//           <h4>96%</h4>
+
+//           <span>Engagement</span>
+
+//         </div>
+
+//         <div className="mega-card">
+
+//           <h4>140+</h4>
+
+//           <span>Viral Reels</span>
+
+
+//         </div>
+
+//       </div>
+
+//     </section>
+//   );
+// }
+
+
+
 import { useEffect, useState } from "react";
 
 import {
@@ -20,15 +211,19 @@ export default function SocialSection() {
 
       setViews(prev => {
 
-        if(prev >=  5000000){
-          return 5000000;
+        if (prev >= 180000000) {
+          clearInterval(interval);
+          return 180000000;
         }
 
-        return prev + Math.floor(Math.random() * 50000);
+        return Math.min(
+          prev + Math.floor(Math.random() * 2000000),
+          180000000
+        );
 
       });
 
-    }, 10);
+    }, 30);
 
     return () => clearInterval(interval);
 
@@ -38,31 +233,16 @@ export default function SocialSection() {
 
   const formatViews = (num) => {
 
-    if(num >= 1000000000){
-
-      return (
-        (num / 1000000000)
-        .toFixed(1)
-        + "B+"
-      );
+    if (num >= 1000000000) {
+      return (num / 1000000000).toFixed(1) + "B+";
     }
 
-    if(num >= 1000000){
-
-      return (
-        (num / 1000000)
-        .toFixed(1)
-        + "M+"
-      );
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(0) + "M+";
     }
 
-    if(num >= 1000){
-
-      return (
-        (num / 1000)
-        .toFixed(1)
-        + "K+"
-      );
+    if (num >= 1000) {
+      return (num / 1000).toFixed(1) + "K+";
     }
 
     return num;
