@@ -20,7 +20,7 @@ export default function SocialSection() {
 
       setViews(prev => {
 
-        if(prev >= 5000000){
+        if(prev >= 00000){
           return 5000000;
         }
 
