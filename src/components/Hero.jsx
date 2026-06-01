@@ -68,7 +68,7 @@ export default function Hero() {
             </div>
 
             <div className="card-value">
-              5M+
+              180M
             </div>
 
           </div>
