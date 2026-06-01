@@ -1,65 +1,101 @@
+import "../styles/brands.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import {
+  Autoplay,
+  FreeMode
+} from "swiper/modules";
+
+import "swiper/css";
+
 export default function Brands() {
 
   const brands = [
 
-    "YouTube",
-    "Instagram",
-    "linkedin",
-    "facebook",
-    "JEE Mains",
-    "JEE Advanced",
-     "CBSE",
-    "UP Board",
-    "9th",
     "10th",
     "11th",
     "12th",
-    "Acadmics",
-  
-    "Maths"
+    "Academics",
+    "Maths",
+    "JEE Mains",
+    "JEE Advanced",
+    "CBSE",
+    "UP Board"
 
   ];
 
   return (
 
-    <section id="brands" className="brands-section">
+    <section
+      className="brands-section"
+      id="brands"
+    >
 
       <div className="brands-top">
 
         <span className="section-label">
-          Collaborations
+          Social Presence
         </span>
 
         <h2 className="section-title">
-          TRUSTED BY
-          MILLIONS
+          TRUSTED BY MILLIONS
         </h2>
 
       </div>
 
-      <div className="brands-marquee">
+      <Swiper
 
-        <div className="brands-track">
+        slidesPerView={"auto"}
 
-          {brands.map((brand, index) => (
+        spaceBetween={34}
 
-            <div className="brand-card" key={index}>
-              {brand}
+        loop={true}
+
+        speed={4000}
+
+        freeMode={true}
+
+        centeredSlides={false}
+
+        grabCursor={true}
+
+        allowTouchMove={true}
+
+        autoplay={{
+          delay:0,
+          disableOnInteraction:false,
+          pauseOnMouseEnter:true
+        }}
+
+        modules={[
+          Autoplay,
+          FreeMode
+        ]}
+
+        className="brands-swiper"
+      >
+
+        {[...brands, ...brands].map((brand, index) => (
+
+          <SwiperSlide
+            className="brand-slide"
+            key={index}
+          >
+
+            <div className="brand-item">
+
+              <span>
+                {brand}
+              </span>
+
             </div>
 
-          ))}
+          </SwiperSlide>
 
-          {brands.map((brand, index) => (
+        ))}
 
-            <div className="brand-card" key={`duplicate-${index}`}>
-              {brand}
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
+      </Swiper>
 
     </section>
   );

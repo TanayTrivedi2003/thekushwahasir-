@@ -1,17 +1,16 @@
+import "../styles/navbar.css";
+
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-
     <nav>
 
       {/* LOGO */}
-
-      <a href="/" className="nav-logo">
-
+      <Link to="/" className="nav-logo">
         <img
           src="/logo.png"
           alt="Logo"
@@ -22,100 +21,111 @@ export default function Navbar() {
           The Kushwaha Sir
           <span className="logo-dot"></span>
         </h1>
-
-      </a>
+      </Link>
 
       {/* DESKTOP MENU */}
-
       <ul className="nav-links">
 
         <li>
-          <a href="#work">
+          <Link to="/#work">
             Work
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#media">
+          <Link to="/#media">
             Media
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#about">
+          <Link
+            to="/about"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+              });
+            }}
+          >
             About
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#brands">
+          <Link to="/#brands">
             Brands
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
-            href="#inquiry"
+          <Link
+            to="/#inquiry"
             className="nav-cta"
           >
             Work Together
-          </a>
+          </Link>
         </li>
 
       </ul>
 
       {/* HAMBURGER */}
-
       <div
         className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-
         <span></span>
         <span></span>
         <span></span>
-
       </div>
 
       {/* MOBILE MENU */}
-
       <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
 
-        <a
-          href="#work"
+        <Link
+          to="/#work"
           onClick={() => setMenuOpen(false)}
         >
           Work
-        </a>
+        </Link>
 
-        <a
-          href="#media"
+        <Link
+          to="/#media"
           onClick={() => setMenuOpen(false)}
         >
           Media
-        </a>
+        </Link>
 
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
+        <Link
+          to="/about"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "instant"
+            });
+
+            setMenuOpen(false);
+          }}
         >
           About
-        </a>
+        </Link>
 
-        <a
-          href="#brands"
+        <Link
+          to="/#brands"
           onClick={() => setMenuOpen(false)}
         >
           Brands
-        </a>
+        </Link>
 
-        <a
-          href="#inquiry"
+        <Link
+          to="/#inquiry"
           className="mobile-work-btn"
           onClick={() => setMenuOpen(false)}
         >
           Work Together
-        </a>
+        </Link>
 
       </div>
 

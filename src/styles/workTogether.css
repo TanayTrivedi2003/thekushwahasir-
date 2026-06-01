@@ -1,0 +1,579 @@
+/* =========================================================
+GLOBAL
+========================================================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+input,
+textarea,
+select,
+button{
+  font-family:'Sora',sans-serif;
+}
+
+button{
+  border:none;
+  outline:none;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* =========================================================
+POPUP OVERLAY
+========================================================= */
+
+.popup-overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+
+  height:100vh;
+
+  background:rgba(0,0,0,0.75);
+
+  backdrop-filter:blur(12px);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:30px;
+
+  z-index:999999;
+
+  animation:popupFade 0.35s ease;
+}
+
+/* =========================================================
+POPUP CONTAINER
+========================================================= */
+
+.popup-container{
+
+  position:relative;
+
+  width:100%;
+
+  max-width:1350px;
+
+  max-height:95vh;
+
+  overflow-y:auto;
+
+  border-radius:38px;
+
+  display:grid;
+
+  grid-template-columns:0.9fr 1.1fr;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.04),
+      rgba(10,10,20,0.98)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,0.5);
+}
+
+/* =========================================================
+LEFT
+========================================================= */
+
+.popup-left{
+
+  padding:70px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+}
+
+.popup-title{
+
+  font-size:82px;
+
+  line-height:0.92;
+
+  font-weight:800;
+
+  letter-spacing:-0.07em;
+
+  color:white;
+
+  margin:24px 0;
+}
+
+.popup-title span{
+
+  color:#B794F4;
+}
+
+.popup-description{
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.68);
+
+  max-width:520px;
+}
+
+/* =========================================================
+RIGHT
+========================================================= */
+
+.popup-right{
+
+  padding:70px;
+}
+
+/* =========================================================
+FORM
+========================================================= */
+
+.popup-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+}
+
+.popup-row{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:18px;
+}
+
+/* =========================================================
+INPUTS
+========================================================= */
+
+.popup-form input,
+.popup-form textarea,
+.popup-form select{
+
+  width:100%;
+
+  padding:20px 24px;
+
+  border-radius:18px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  color:white;
+
+  font-size:16px;
+
+  outline:none;
+
+  transition:0.3s ease;
+
+  appearance:none;
+
+  -webkit-appearance:none;
+
+  -moz-appearance:none;
+}
+
+/* PLACEHOLDER */
+
+.popup-form input::placeholder,
+.popup-form textarea::placeholder{
+
+  color:rgba(255,255,255,0.35);
+}
+
+/* SELECT OPTION */
+
+.popup-form select option{
+
+  background:#111827;
+
+  color:white;
+}
+
+/* FOCUS */
+
+.popup-form input:focus,
+.popup-form textarea:focus,
+.popup-form select:focus{
+
+  border-color:#8B5CF6;
+
+  box-shadow:
+    0 0 25px rgba(139,92,246,0.18);
+}
+
+/* TEXTAREA */
+
+.popup-form textarea{
+
+  resize:none;
+}
+
+/* =========================================================
+SELECT WRAPPER
+========================================================= */
+
+.select-wrapper{
+
+  position:relative;
+
+  width:100%;
+}
+
+/* SELECT */
+
+.select-wrapper select{
+
+  width:100%;
+
+  height:68px;
+
+  padding:0 55px 0 22px;
+
+  border-radius:18px;
+
+  border:
+    1px solid rgba(139,92,246,0.35);
+
+  background:
+    rgba(15,15,24,0.96);
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:500;
+
+  cursor:pointer;
+
+  outline:none;
+
+  transition:0.3s ease;
+
+  box-shadow:
+    inset 0 0 0 1000px #0b0b14;
+}
+
+/* FOCUS */
+
+.select-wrapper select:focus{
+
+  border-color:#8B5CF6;
+
+  box-shadow:
+    0 0 25px rgba(139,92,246,0.22),
+    inset 0 0 0 1000px #10101a;
+}
+
+/* OPTION */
+
+.select-wrapper select option{
+
+  background:#0b0b14;
+
+  color:white;
+}
+
+/* REMOVE WINDOWS ARROW */
+
+select::-ms-expand{
+
+  display:none;
+}
+
+/* CUSTOM ARROW */
+
+.select-wrapper::after{
+
+  content:"⌄";
+
+  position:absolute;
+
+  top:50%;
+
+  right:22px;
+
+  transform:translateY(-50%);
+
+  color:rgba(255,255,255,0.7);
+
+  font-size:20px;
+
+  pointer-events:none;
+}
+
+/* =========================================================
+BUTTON
+========================================================= */
+
+.popup-send-btn{
+
+  height:64px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8B5CF6,
+      #A855F7
+    );
+
+  color:white;
+
+  font-size:17px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+
+  box-shadow:
+    0 10px 40px rgba(139,92,246,0.35);
+}
+
+.popup-send-btn:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 20px 60px rgba(139,92,246,0.45);
+}
+
+
+/* =========================================================
+CLOSE BUTTON
+========================================================= */
+
+.popup-close{
+
+  position:absolute;
+
+  top:22px;
+
+  right:22px;
+
+  width:64px;
+
+  height:64px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8B5CF6,
+      #A855F7
+    );
+
+  color:white;
+
+  font-size:34px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease,
+    background 0.35s ease;
+
+  z-index:100;
+
+  border:none;
+
+  outline:none;
+
+  box-shadow:
+    0 20px 60px rgba(139,92,246,0.45);
+}
+
+
+
+/* ACTIVE */
+
+.popup-close:active{
+
+  transform:
+    scale(0.95);
+}
+/* =========================================================
+SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+  background:#05050a;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#8B5CF6;
+
+  border-radius:999px;
+}
+
+/* =========================================================
+LAPTOP
+========================================================= */
+
+@media(max-width:1200px){
+
+  .popup-container{
+
+    grid-template-columns:1fr;
+  }
+
+  .popup-left{
+
+    padding:50px 40px 10px;
+  }
+
+  .popup-right{
+
+    padding:30px 40px 50px;
+  }
+
+  .popup-title{
+
+    font-size:58px;
+  }
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:768px){
+
+  .popup-overlay{
+
+    padding:16px;
+  }
+
+  .popup-container{
+
+    border-radius:24px;
+  }
+
+  .popup-left,
+  .popup-right{
+
+    padding:26px;
+  }
+
+  .popup-row{
+
+    grid-template-columns:1fr;
+  }
+
+  .popup-title{
+
+    font-size:42px;
+  }
+
+  .popup-description{
+
+    font-size:16px;
+
+    line-height:1.7;
+  }
+
+  .popup-form input,
+  .popup-form textarea,
+  .popup-form select{
+
+    padding:16px 18px;
+
+    font-size:14px;
+  }
+
+  .popup-send-btn{
+
+    height:58px;
+
+    font-size:16px;
+  }
+
+  .popup-close{
+
+    width:40px;
+
+    height:40px;
+
+    font-size:22px;
+  }
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .popup-title{
+
+    font-size:30px;
+  }
+
+  .popup-description{
+
+    font-size:14px;
+  }
+
+  .popup-left,
+  .popup-right{
+
+    padding:18px;
+  }
+}

@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import "../styles/workTogether.css";
+
 import {
   FaEnvelope,
   FaMapMarkerAlt,
@@ -6,6 +10,17 @@ import {
 } from "react-icons/fa";
 
 export default function WorkTogether() {
+
+  const [selectedType, setSelectedType] = useState("");
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const options = [
+    "Brand Promotion",
+    "Educational Campaign",
+    "Sponsorship",
+    "Social Media Collaboration"
+  ];
 
   return (
 
@@ -167,35 +182,59 @@ export default function WorkTogether() {
 
             </div>
 
+            {/* CUSTOM DROPDOWN */}
+
             <div className="form-group">
 
               <label>
                 Partnership Type
               </label>
 
-              <select defaultValue="">
+              <div className="custom-dropdown">
 
-                <option value="" disabled>
-                  Select Partnership Type
-                </option>
+                <div
+                  className="dropdown-selected"
+                  onClick={() =>
+                    setDropdownOpen(!dropdownOpen)
+                  }
+                >
 
-                <option>
-                  Brand Promotion
-                </option>
+                  {selectedType || "Select Partnership Type"}
 
-                <option>
-                  Educational Campaign
-                </option>
+                  <span>
+                    ▼
+                  </span>
 
-                <option>
-                  Sponsorship
-                </option>
+                </div>
 
-                <option>
-                  Social Media Collaboration
-                </option>
+                {dropdownOpen && (
 
-              </select>
+                  <div className="dropdown-options">
+
+                    {options.map((option) => (
+
+                      <div
+                        key={option}
+                        className="dropdown-option"
+                        onClick={() => {
+
+                          setSelectedType(option);
+
+                          setDropdownOpen(false);
+                        }}
+                      >
+
+                        {option}
+
+                      </div>
+
+                    ))}
+
+                  </div>
+
+                )}
+
+              </div>
 
             </div>
 

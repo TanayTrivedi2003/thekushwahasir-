@@ -1,3 +1,13 @@
+import "../styles/reels.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import {
+  Autoplay
+} from "swiper/modules";
+
+import "swiper/css";
+
 export default function Reels() {
 
   const reels = [
@@ -65,18 +75,44 @@ export default function Reels() {
 
       </div>
 
-      <div className="reels-marquee">
+      <Swiper
 
-        <div className="reels-marquee-track">
+        slidesPerView={"auto"}
 
-          {[...reels, ...reels, ...reels].map((reel, index) => (
+        centeredSlides={true}
+
+        loop={true}
+
+        speed={1000}
+
+        spaceBetween={30}
+
+        grabCursor={true}
+
+        autoplay={{
+          delay:2200,
+          disableOnInteraction:false
+        }}
+
+        modules={[
+          Autoplay
+        ]}
+
+        className="reels-swiper"
+      >
+
+        {reels.map((reel, index) => (
+
+          <SwiperSlide
+            className="reel-slide"
+            key={index}
+          >
 
             <a
               href={reel.link}
               target="_blank"
               rel="noreferrer"
               className="modern-reel-card"
-              key={index}
             >
 
               <video
@@ -98,11 +134,11 @@ export default function Reels() {
 
             </a>
 
-          ))}
+          </SwiperSlide>
 
-        </div>
+        ))}
 
-      </div>
+      </Swiper>
 
     </section>
   );

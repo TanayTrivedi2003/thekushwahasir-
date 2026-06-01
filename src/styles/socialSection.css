@@ -1,0 +1,533 @@
+/* =========================================================
+SOCIAL SECTION
+========================================================= */
+
+.social-section{
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 170px 70px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #090910,
+      #0D0D14
+    );
+}
+
+/* =========================================================
+SECTION TOP
+========================================================= */
+
+.section-top{
+  margin-bottom: 90px;
+
+  text-align: left;
+}
+
+.section-label{
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background: rgba(139,92,246,0.12);
+
+  border: 1px solid rgba(139,92,246,0.2);
+
+  color: #B794F4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 26px;
+
+  backdrop-filter: blur(18px);
+}
+
+.section-title{
+  font-size: clamp(52px,6vw,88px);
+
+  line-height: 0.92;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  width: 100%;
+
+  margin: 0;
+}
+
+/* =========================================================
+SOCIAL GRID
+========================================================= */
+
+.social-grid{
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 34px;
+
+  margin-bottom: 42px;
+}
+
+/* =========================================================
+SOCIAL CARD
+========================================================= */
+
+.social-card{
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 44px;
+
+  border-radius: 38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(22px);
+
+  transition: 0.45s ease;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.28);
+}
+
+.social-card:hover{
+  transform:
+    translateY(-12px)
+    rotate(-1deg);
+
+  border-color:
+    rgba(139,92,246,0.28);
+
+  box-shadow:
+    0 25px 70px rgba(139,92,246,0.16);
+}
+
+/* GLOW */
+
+.social-card::before{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139,92,246,0.18),
+      transparent 55%
+    );
+
+  opacity: 0;
+
+  transition: 0.45s ease;
+}
+
+.social-card:hover::before{
+  opacity: 1;
+}
+
+/* =========================================================
+SOCIAL ICON
+========================================================= */
+
+.social-icon{
+  width: 78px;
+  height: 78px;
+
+  border-radius: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 30px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* INSTAGRAM */
+
+.instagram{
+  background:
+    linear-gradient(
+      135deg,
+      #FF9966,
+      #FF1744
+    );
+}
+
+/* YOUTUBE */
+
+.youtube{
+  background:
+    linear-gradient(
+      135deg,
+      #FF3131,
+      #C40030
+    );
+}
+
+/* FACEBOOK */
+
+.facebook{
+  background:
+    linear-gradient(
+      135deg,
+      #1877f2,
+      #0d65d9
+    );
+}
+
+/* =========================================================
+TEXT
+========================================================= */
+
+.social-card h3{
+  font-size: 36px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  margin-bottom: 10px;
+}
+
+.social-card p{
+  color: rgba(255,255,255,0.58);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  margin-bottom: 34px;
+}
+
+/* =========================================================
+SOCIAL NUMBER
+========================================================= */
+
+.social-number{
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 6px;
+
+  overflow: hidden;
+
+  margin: 28px 0 18px;
+
+  font-size: 82px;
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f3e8ff 35%,
+      #B794F4 100%
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(183,148,244,0.18);
+
+  animation:
+    counterFloat 2.8s ease-in-out infinite alternate;
+}
+
+/* K / M / B */
+
+.social-number small{
+  font-size: 34px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #B794F4;
+
+  -webkit-text-fill-color: #B794F4;
+
+  opacity: 0.95;
+}
+
+/* =========================================================
+MEGA STATS
+========================================================= */
+
+.mega-stats{
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 34px;
+}
+
+.mega-card{
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 60px;
+
+  text-align: center;
+
+  border-radius: 38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.07),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  backdrop-filter: blur(20px);
+
+  transition: 0.4s ease;
+}
+
+.mega-card:hover{
+  transform: translateY(-10px);
+
+  border-color:
+    rgba(139,92,246,0.22);
+}
+
+/* GLOW */
+
+.mega-card::before{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(139,92,246,0.16),
+      transparent 70%
+    );
+
+  opacity: 0;
+
+  transition: 0.45s ease;
+}
+
+.mega-card:hover::before{
+  opacity: 1;
+}
+
+/* NUMBER */
+
+.mega-card h4{
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 92px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  margin-bottom: 16px;
+}
+
+/* LABEL */
+
+.mega-card span{
+  position: relative;
+
+  z-index: 2;
+
+  color: rgba(255,255,255,0.58);
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+LIVE COUNTER
+========================================================= */
+
+.live-counter{
+  animation:
+    counterPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+ANIMATIONS
+========================================================= */
+
+@keyframes counterFloat{
+
+  from{
+    transform:
+      translateY(0px)
+      scale(1);
+  }
+
+  to{
+    transform:
+      translateY(-2px)
+      scale(1.01);
+  }
+}
+
+@keyframes counterPulse{
+
+  from{
+    transform: scale(1);
+  }
+
+  to{
+    transform: scale(1.04);
+  }
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+  .social-grid,
+  .mega-stats{
+    grid-template-columns: 1fr;
+  }
+
+  .section-title{
+    font-size: 64px;
+  }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .social-section{
+    padding: 100px 20px;
+  }
+
+  .section-top{
+    margin-bottom: 60px;
+  }
+
+  .section-title{
+    font-size: 44px;
+
+    line-height: 1;
+  }
+
+  .social-grid{
+    gap: 22px;
+  }
+
+  .social-card{
+    padding: 28px;
+  }
+
+  .social-icon{
+    width: 64px;
+    height: 64px;
+
+    font-size: 24px;
+
+    border-radius: 20px;
+  }
+
+  .social-card h3{
+    font-size: 28px;
+  }
+
+  .social-number{
+    font-size: 56px;
+  }
+
+  .social-number small{
+    font-size: 24px;
+
+    margin-bottom: 6px;
+  }
+
+  .mega-card{
+    padding: 40px 26px;
+  }
+
+  .mega-card h4{
+    font-size: 54px;
+  }
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .section-title{
+    font-size: 36px;
+  }
+
+  .social-number{
+    font-size: 42px;
+  }
+
+  .mega-card{
+    border-radius: 24px;
+  }
+}

@@ -1,0 +1,349 @@
+/* =========================================================
+NAVBAR
+========================================================= */
+
+nav{
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 26px 70px;
+
+  background: rgba(5,5,10,0.45);
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================================================
+NAV LOGO
+========================================================= */
+
+.nav-logo{
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  text-decoration: none;
+}
+
+.nav-logo-img{
+  width: 48px;
+  height: 48px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 30px rgba(139,92,246,0.35);
+
+  transition: 0.4s ease;
+}
+
+.nav-logo-img:hover{
+  transform:
+    scale(1.08)
+    rotate(-4deg);
+}
+
+.logo-text{
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  line-height: 1;
+}
+
+.logo-dot{
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  background: #ff2d55;
+
+  border-radius: 50%;
+
+  margin-left: 2px;
+
+  position: relative;
+
+  top: 1px;
+}
+
+/* =========================================================
+NAV LINKS
+========================================================= */
+
+.nav-links{
+  display: flex;
+
+  align-items: center;
+
+  gap: 40px;
+
+  list-style: none;
+}
+
+.nav-links a{
+  text-decoration: none;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover{
+  color: white;
+}
+
+/* =========================================================
+NAV BUTTON
+========================================================= */
+
+.nav-cta{
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 180px;
+
+  padding: 16px 30px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8B5CF6,
+      #6D28D9
+    );
+
+  color: white !important;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 30px rgba(139,92,246,0.45);
+
+  transition: 0.35s ease;
+}
+
+.nav-cta:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(139,92,246,0.55);
+}
+
+/* =========================================================
+HAMBURGER
+========================================================= */
+
+.hamburger{
+  display: none;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  z-index: 1001;
+}
+
+.hamburger span{
+  width: 20px;
+  height: 2px;
+
+  background: white;
+
+  border-radius: 999px;
+
+  transition: 0.3s ease;
+}
+
+/* =========================================================
+MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+  position: fixed;
+
+  top: 84px;
+  left: 20px;
+  right: 20px;
+
+  background:
+    rgba(10,10,20,0.95);
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  transform:
+    translateY(-20px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: 0.35s ease;
+
+  z-index: 999;
+}
+
+/* ACTIVE */
+
+.mobile-menu.active{
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+/* LINKS */
+
+.mobile-menu a{
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+/* BUTTON */
+
+.mobile-work-btn{
+  height: 56px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #a855f7
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  nav{
+    padding: 20px 24px;
+  }
+
+  .nav-links{
+    gap: 22px;
+  }
+
+  .logo-text{
+    font-size: 26px;
+  }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  nav{
+    padding: 16px 18px;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+  .hamburger{
+    display: flex;
+  }
+
+  .nav-logo{
+    gap: 10px;
+  }
+
+  .nav-logo-img{
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-text{
+    font-size: 20px;
+  }
+
+  .nav-cta{
+    display: none;
+  }
+}

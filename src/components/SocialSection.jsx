@@ -1,3 +1,4 @@
+import "../styles/socialSection.css";
 import { useEffect, useState } from "react";
 
 import {
@@ -10,7 +11,7 @@ export default function SocialSection() {
 
   /* TOTAL VIEWS */
 
-  const [views, setViews] = useState(1000000);
+  const [views, setViews] = useState(150000000);
 
   /* LIVE TOTAL VIEW COUNTER */
 
@@ -20,15 +21,15 @@ export default function SocialSection() {
 
       setViews(prev => {
 
-        if(prev >= 5000000){
-          return 5000000;
+        if(prev >= 180000000){
+          return 180000000;
         }
 
-        return prev + Math.floor(Math.random() * 50000);
+        return prev + Math.floor(Math.random() * 200000);
 
       });
 
-    }, 10);
+    }, 20);
 
     return () => clearInterval(interval);
 
@@ -51,7 +52,7 @@ export default function SocialSection() {
 
       return (
         (num / 1000000)
-        .toFixed(1)
+        .toFixed(0)
         + "M+"
       );
     }
@@ -101,7 +102,7 @@ export default function SocialSection() {
           <p>@thekushwahasir</p>
 
           <div className="social-number">
-            596<small>K</small>
+            615<small>K</small>
           </div>
 
           <span>Followers</span>
@@ -121,7 +122,7 @@ export default function SocialSection() {
           <p>The Kushwaha Sir</p>
 
           <div className="social-number">
-            98.7<small>K</small>
+            101<small>K</small>
           </div>
 
           <span>Subscribers</span>
@@ -141,7 +142,7 @@ export default function SocialSection() {
           <p>thekushwahasir1</p>
 
           <div className="social-number">
-            39<small>K</small>
+            41<small>K</small>
           </div>
 
           <span>Followers</span>
@@ -174,7 +175,7 @@ export default function SocialSection() {
 
         <div className="mega-card">
 
-          <h4>140+</h4>
+          <h4>150+</h4>
 
           <span>Viral Reels</span>
 

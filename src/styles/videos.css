@@ -1,0 +1,571 @@
+/* =========================================================
+VIDEOS SECTION
+========================================================= */
+
+.videos-section{
+
+  position:relative;
+
+  padding:140px 0;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #05050a,
+    #090914
+  );
+}
+
+/* =========================================================
+TOP
+========================================================= */
+
+.videos-top{
+
+  padding:0 70px;
+
+  margin-bottom:70px;
+}
+
+/* =========================================================
+SWIPER
+========================================================= */
+
+.videos-swiper{
+
+  width:100%;
+
+  padding-top:20px;
+
+  padding-bottom:90px;
+
+  overflow:visible !important;
+}
+
+/* CONTINUOUS EFFECT */
+
+.videos-swiper .swiper-wrapper{
+
+  transition-timing-function:linear !important;
+
+  align-items:center;
+}
+
+/* =========================================================
+SLIDE
+========================================================= */
+
+.video-slide{
+
+  width:520px !important;
+
+  transition:0.45s ease;
+}
+
+/* =========================================================
+CARD
+========================================================= */
+
+.video-card{
+
+  position:relative;
+
+  display:block;
+
+  overflow:hidden;
+
+  border-radius:38px;
+
+  background:#11111a;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+
+  cursor:grab;
+
+  box-shadow:
+  0 25px 80px rgba(0,0,0,0.45);
+
+  text-decoration:none;
+
+  opacity:0.8;
+}
+
+/* =========================================================
+ACTIVE
+========================================================= */
+
+.swiper-slide-active .video-card{
+
+  transform:scale(1);
+
+  opacity:1;
+
+  z-index:5;
+
+  border-color:
+  rgba(139,92,246,0.35);
+
+  box-shadow:
+  0 35px 120px rgba(139,92,246,0.25);
+}
+
+/* =========================================================
+SIDE
+========================================================= */
+
+.swiper-slide-prev .video-card,
+.swiper-slide-next .video-card{
+
+  transform:scale(0.95);
+
+  opacity:0.86;
+}
+
+/* =========================================================
+OTHER SLIDES
+========================================================= */
+
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .video-card{
+
+  opacity:0.7;
+
+  transform:scale(0.9);
+}
+
+/* =========================================================
+VIDEO
+========================================================= */
+
+.youtube-video{
+
+  width:100%;
+
+  height:320px;
+
+  border:none;
+}
+
+/* =========================================================
+INFO
+========================================================= */
+
+.video-info{
+
+  padding:26px;
+}
+
+.video-info h3{
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:800;
+
+  line-height:1.3;
+}
+
+/* =========================================================
+PAGINATION
+========================================================= */
+
+.swiper-pagination-bullet{
+
+  width:10px;
+
+  height:10px;
+
+  background:
+  rgba(255,255,255,0.3);
+
+  opacity:1;
+}
+
+.swiper-pagination-bullet-active{
+
+  width:28px;
+
+  border-radius:999px;
+
+  background:#8b5cf6;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .video-slide{
+
+    width:430px !important;
+  }
+
+  .youtube-video{
+
+    height:270px;
+  }
+
+  .video-info h3{
+
+    font-size:20px;
+  }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .videos-section{
+
+    padding:100px 0;
+  }
+
+  .videos-top{
+
+    padding:0 20px;
+
+    margin-bottom:50px;
+  }
+
+  .video-slide{
+
+    width:88% !important;
+  }
+
+  .youtube-video{
+
+    height:220px;
+  }
+
+  .video-info{
+
+    padding:20px;
+  }
+
+  .video-info h3{
+
+    font-size:18px;
+  }
+
+  .swiper-slide-prev .video-card,
+  .swiper-slide-next .video-card{
+
+    transform:scale(0.96);
+
+    opacity:0.82;
+  }
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .video-slide{
+
+    width:92% !important;
+  }
+
+  .youtube-video{
+
+    height:210px;
+  }
+
+  .video-info h3{
+
+    font-size:17px;
+  }
+}/* =========================================================
+VIDEOS SECTION
+========================================================= */
+
+.videos-section{
+
+  position:relative;
+
+  padding:140px 0;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #05050a,
+    #090914
+  );
+}
+
+/* =========================================================
+TOP
+========================================================= */
+
+.videos-top{
+
+  padding:0 70px;
+
+  margin-bottom:70px;
+}
+
+/* =========================================================
+SWIPER
+========================================================= */
+
+.videos-swiper{
+
+  width:100%;
+
+  padding-top:20px;
+
+  padding-bottom:90px;
+
+  overflow:visible !important;
+}
+
+/* CONTINUOUS EFFECT */
+
+.videos-swiper .swiper-wrapper{
+
+  transition-timing-function:linear !important;
+
+  align-items:center;
+}
+
+/* =========================================================
+SLIDE
+========================================================= */
+
+.video-slide{
+
+  width:520px !important;
+
+  transition:0.45s ease;
+}
+
+/* =========================================================
+CARD
+========================================================= */
+
+.video-card{
+
+  position:relative;
+
+  display:block;
+
+  overflow:hidden;
+
+  border-radius:38px;
+
+  background:#11111a;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+
+  cursor:grab;
+
+  box-shadow:
+  0 25px 80px rgba(0,0,0,0.45);
+
+  text-decoration:none;
+
+  opacity:0.8;
+}
+
+/* =========================================================
+ACTIVE
+========================================================= */
+
+.swiper-slide-active .video-card{
+
+  transform:scale(1);
+
+  opacity:1;
+
+  z-index:5;
+
+  border-color:
+  rgba(139,92,246,0.35);
+
+  box-shadow:
+  0 35px 120px rgba(139,92,246,0.25);
+}
+
+/* =========================================================
+SIDE
+========================================================= */
+
+.swiper-slide-prev .video-card,
+.swiper-slide-next .video-card{
+
+  transform:scale(0.95);
+
+  opacity:0.86;
+}
+
+/* =========================================================
+OTHER SLIDES
+========================================================= */
+
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .video-card{
+
+  opacity:0.7;
+
+  transform:scale(0.9);
+}
+
+/* =========================================================
+VIDEO
+========================================================= */
+
+.youtube-video{
+
+  width:100%;
+
+  height:320px;
+
+  border:none;
+}
+
+/* =========================================================
+INFO
+========================================================= */
+
+.video-info{
+
+  padding:26px;
+}
+
+.video-info h3{
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:800;
+
+  line-height:1.3;
+}
+
+/* =========================================================
+PAGINATION
+========================================================= */
+
+.swiper-pagination-bullet{
+
+  width:10px;
+
+  height:10px;
+
+  background:
+  rgba(255,255,255,0.3);
+
+  opacity:1;
+}
+
+.swiper-pagination-bullet-active{
+
+  width:28px;
+
+  border-radius:999px;
+
+  background:#8b5cf6;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .video-slide{
+
+    width:430px !important;
+  }
+
+  .youtube-video{
+
+    height:270px;
+  }
+
+  .video-info h3{
+
+    font-size:20px;
+  }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .videos-section{
+
+    padding:100px 0;
+  }
+
+  .videos-top{
+
+    padding:0 20px;
+
+    margin-bottom:50px;
+  }
+
+  .video-slide{
+
+    width:88% !important;
+  }
+
+  .youtube-video{
+
+    height:220px;
+  }
+
+  .video-info{
+
+    padding:20px;
+  }
+
+  .video-info h3{
+
+    font-size:18px;
+  }
+
+  .swiper-slide-prev .video-card,
+  .swiper-slide-next .video-card{
+
+    transform:scale(0.96);
+
+    opacity:0.82;
+  }
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+  .video-slide{
+
+    width:92% !important;
+  }
+
+  .youtube-video{
+
+    height:210px;
+  }
+
+  .video-info h3{
+
+    font-size:17px;
+  }
+}

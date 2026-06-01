@@ -1,3 +1,4 @@
+import "../styles/testimonials.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
@@ -19,7 +20,11 @@ export default function Testimonials() {
     "/comment3.jpeg",
     "/comment4.jpeg",
     "/comment5.jpeg",
-    "/comment6.jpeg"
+    "/comment6.jpeg",
+    "/comment7.jpeg",
+    "/comment8.jpeg",
+    "/comment9.jpeg",
+
 
   ];
 

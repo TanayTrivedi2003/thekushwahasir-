@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "../styles/footerCTA.css";
+
 export default function FooterCTA() {
 
   const [openForm, setOpenForm] = useState(false);
@@ -8,9 +10,7 @@ export default function FooterCTA() {
 
     <>
 
-      {/* =========================
-      CTA SECTION
-      ========================= */}
+      {/* CTA SECTION */}
 
       <section
         id="inquiry"
@@ -19,7 +19,7 @@ export default function FooterCTA() {
 
         <div className="footer-glow"></div>
 
-        <span className="section-label">
+        <span className="footer-section-label">
           Work Together
         </span>
 
@@ -71,7 +71,7 @@ export default function FooterCTA() {
 
           <div className="footer-stat-card">
 
-            <h3>5M+</h3>
+            <h3>180M+</h3>
 
             <span>Total Views</span>
 
@@ -79,7 +79,7 @@ export default function FooterCTA() {
 
           <div className="footer-stat-card">
 
-            <h3>733.7K+</h3>
+            <h3>757K+</h3>
 
             <span>Total Followers</span>
 
@@ -87,7 +87,7 @@ export default function FooterCTA() {
 
           <div className="footer-stat-card">
 
-            <h3>140+</h3>
+            <h3>150+</h3>
 
             <span>Viral Videos</span>
 
@@ -97,26 +97,24 @@ export default function FooterCTA() {
 
       </section>
 
-      {/* =========================
-      POPUP FORM
-      ========================= */}
+      {/* POPUP */}
 
       {openForm && (
 
         <div
-          className="popup-overlay"
+          className="footer-popup-overlay"
           onClick={() => setOpenForm(false)}
         >
 
           <div
-            className="popup-container"
+            className="footer-popup-container"
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* CLOSE BUTTON */}
+            {/* CLOSE */}
 
             <button
-              className="popup-close"
+              className="footer-popup-close"
               onClick={() => setOpenForm(false)}
             >
 
@@ -126,13 +124,13 @@ export default function FooterCTA() {
 
             {/* LEFT */}
 
-            <div className="popup-left">
+            <div className="footer-popup-left">
 
-              <span className="section-label">
+              <span className="footer-section-label">
                 Work Together
               </span>
 
-              <h2 className="popup-title">
+              <h2 className="footer-popup-title">
 
                 Let’s Build
                 <br />
@@ -146,7 +144,7 @@ export default function FooterCTA() {
 
               </h2>
 
-              <p className="popup-description">
+              <p className="footer-popup-description">
 
                 Collaborate with The Kushwaha Sir
                 for educational campaigns,
@@ -160,14 +158,14 @@ export default function FooterCTA() {
 
             {/* RIGHT */}
 
-            <div className="popup-right">
+            <div className="footer-popup-right">
 
               <form
-                className="popup-form"
+                className="footer-popup-form"
                 onSubmit={(e) => e.preventDefault()}
               >
 
-                <div className="popup-row">
+                <div className="footer-popup-row">
 
                   <input
                     type="text"
@@ -193,7 +191,10 @@ export default function FooterCTA() {
 
                 <select defaultValue="">
 
-                  <option value="" disabled>
+                  <option
+                    value=""
+                    disabled
+                  >
                     Partnership Type
                   </option>
 
@@ -222,7 +223,7 @@ export default function FooterCTA() {
 
                 <button
                   type="submit"
-                  className="popup-send-btn"
+                  className="footer-popup-send-btn"
                 >
 
                   Send Inquiry →

@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "../styles/videos.css";
+
 import {
   EffectCoverflow,
   Pagination,
@@ -52,7 +54,10 @@ export default function Videos() {
 
   return (
 
-    <section id="media" className="videos-section">
+    <section
+      id="media"
+      className="videos-section"
+    >
 
       <div className="videos-top">
 
@@ -78,9 +83,14 @@ export default function Videos() {
 
         slidesPerView={"auto"}
 
+        speed={5000}
+
+        allowTouchMove={true}
+
         autoplay={{
-          delay:3000,
-          disableOnInteraction:false
+          delay:1,
+          disableOnInteraction:false,
+          pauseOnMouseEnter:false
         }}
 
         coverflowEffect={{

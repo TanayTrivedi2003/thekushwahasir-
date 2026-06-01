@@ -1,16 +1,39 @@
+import "../styles/loader.css";
+
 import { useEffect, useState } from "react";
 
 export default function Loader() {
+
+  const [progress, setProgress] = useState(0);
 
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
 
-    const timer = setTimeout(() => {
-      setHide(true);
-    }, 2600);
+    const interval = setInterval(() => {
 
-    return () => clearTimeout(timer);
+      setProgress(prev => {
+
+        if(prev >= 100){
+
+          clearInterval(interval);
+
+          setTimeout(() => {
+
+            setHide(true);
+
+          }, 400);
+
+          return 100;
+        }
+
+        return prev + 1;
+
+      });
+
+    }, 22);
+
+    return () => clearInterval(interval);
 
   }, []);
 
@@ -18,7 +41,15 @@ export default function Loader() {
 
     <div className={`loader-screen ${hide ? "loader-hide" : ""}`}>
 
+      {/* GLOW */}
+
+      <div className="loader-glow"></div>
+
+      {/* CONTENT */}
+
       <div className="loader-content">
+
+        {/* LOGO */}
 
         <img
           src="/logo.png"
@@ -26,9 +57,44 @@ export default function Loader() {
           className="loader-logo"
         />
 
-        <h1 className="loader-title">
-          The Kushwaha Sir
-        </h1>
+        {/* TITLE */}
+
+        <div className="loader-title-wrap">
+
+  {/* BACK TEXT */}
+
+  <h1 className="loader-title loader-title-back">
+
+    The Kushwaha Sir
+
+    <span className="loader-dot"></span>
+
+  </h1>
+
+  {/* FILL TEXT */}
+
+  <h1
+    className="loader-title loader-title-fill"
+    style={{
+      clipPath:`inset(${100 - progress}% 0 0 0)`
+    }}
+  >
+
+    The Kushwaha Sir
+
+    <span className="loader-dot"></span>
+
+  </h1>
+
+</div>
+
+        {/* LOADING */}
+
+        <p className="loader-progress">
+
+          loading... {progress}%
+
+        </p>
 
       </div>
 

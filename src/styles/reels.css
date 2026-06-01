@@ -1,0 +1,235 @@
+/* =========================================================
+REELS SECTION
+========================================================= */
+
+.reels-section{
+
+  padding:140px 0;
+
+  background:
+  linear-gradient(
+    180deg,
+    #04040a,
+    #090914
+  );
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+/* TOP */
+
+.reels-top{
+
+  padding:0 70px;
+
+  margin-bottom:70px;
+}
+
+/* =========================================================
+SWIPER
+========================================================= */
+
+.reels-swiper{
+
+  width:100%;
+
+  padding-top:20px;
+
+  padding-bottom:80px;
+
+  overflow:visible !important;
+}
+
+/* SLIDE */
+
+.reel-slide{
+
+  width:300px !important;
+
+  transition:0.45s ease;
+}
+
+/* =========================================================
+CARD
+========================================================= */
+
+.modern-reel-card{
+
+  width:100%;
+
+  height:580px;
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  display:block;
+
+  background:black;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+
+  box-shadow:
+  0 25px 70px rgba(0,0,0,0.45);
+}
+
+/* VIDEO */
+
+.modern-reel-video{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.5s ease;
+}
+
+/* OVERLAY */
+
+.modern-reel-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    transparent
+  );
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:center;
+
+  padding-bottom:30px;
+
+  opacity:0;
+
+  transition:0.4s ease;
+}
+
+.modern-reel-overlay span{
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+}
+
+/* =========================================================
+ACTIVE SLIDE
+========================================================= */
+
+.swiper-slide-active .modern-reel-card{
+
+  transform:scale(1.03);
+
+  z-index:5;
+
+  border-color:
+  rgba(139,92,246,0.35);
+
+  box-shadow:
+  0 35px 90px rgba(139,92,246,0.28);
+}
+
+/* SIDE SLIDES */
+
+.swiper-slide-prev .modern-reel-card,
+.swiper-slide-next .modern-reel-card{
+
+  opacity:0.7;
+}
+
+/* HOVER */
+
+.modern-reel-card:hover{
+
+  transform:
+  translateY(-10px)
+  scale(1.03);
+}
+
+.modern-reel-card:hover .modern-reel-video{
+
+  transform:scale(1.08);
+}
+
+.modern-reel-card:hover .modern-reel-overlay{
+
+  opacity:1;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:992px){
+
+  .reels-top{
+
+    padding:0 30px;
+  }
+
+  .reel-slide{
+
+    width:240px !important;
+  }
+
+  .modern-reel-card{
+
+    height:470px;
+  }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .reels-section{
+
+    padding:100px 0;
+  }
+
+  .reels-top{
+
+    padding:0 20px;
+
+    margin-bottom:50px;
+  }
+
+  .reel-slide{
+
+    width:180px !important;
+  }
+
+  .modern-reel-card{
+
+    height:340px;
+
+    border-radius:24px;
+  }
+
+  .modern-reel-overlay span{
+
+    font-size:14px;
+  }
+}

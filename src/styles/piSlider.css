@@ -1,0 +1,326 @@
+/* =========================
+PREMIUM PI SLIDER
+========================= */
+
+.pi-slider-section{
+
+  position:relative;
+
+  width:100%;
+
+  overflow:hidden;
+
+  margin-top:30px;
+
+  padding:12px 0;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(139,92,246,0.08),
+    rgba(255,255,255,0.02),
+    rgba(139,92,246,0.08)
+  );
+
+  border-top:
+  1px solid rgba(139,92,246,0.15);
+
+  border-bottom:
+  1px solid rgba(139,92,246,0.15);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,0.06),
+    inset 0 -1px rgba(255,255,255,0.06),
+    0 0 40px rgba(139,92,246,0.12);
+}
+
+/* BIG PI BACKGROUND */
+
+.pi-slider-section::before{
+
+  content:"π";
+
+  position:absolute;
+
+  left:50%;
+
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  font-size:220px;
+
+  font-weight:900;
+
+  color:rgba(139,92,246,0.05);
+
+  pointer-events:none;
+
+  user-select:none;
+}
+
+/* SIDE FADE */
+
+.pi-slider-section::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    90deg,
+    #05050a 0%,
+    transparent 6%,
+    transparent 94%,
+    #05050a 100%
+  );
+
+  pointer-events:none;
+}
+
+/* WRAPPER */
+
+.pi-wrapper{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding-left:8px;
+}
+
+/* PI VALUE */
+
+.pi-static{
+
+  flex-shrink:0;
+
+  font-size:48px;
+
+  font-weight:900;
+
+  color:white;
+
+  white-space:nowrap;
+
+  text-shadow:
+    0 0 20px rgba(139,92,246,0.5);
+
+  animation:
+    floatPi 4s ease-in-out infinite;
+}
+
+/* FLOAT */
+
+@keyframes floatPi{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-3px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* WINDOW */
+
+.pi-slider-window{
+
+  flex:1;
+
+  min-width:0;
+
+  overflow:hidden;
+}
+
+/* TRACK */
+
+.pi-slider-track{
+
+  display:flex;
+
+  width:max-content;
+
+  animation:
+    piMove 1200s linear infinite;
+}
+
+.pi-slider-window:hover .pi-slider-track{
+
+  animation-play-state:paused;
+}
+
+/* DIGITS */
+
+.pi-slider-track h2{
+
+  font-size:34px;
+
+  font-weight:800;
+
+  white-space:nowrap;
+
+  padding-right:40px;
+
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #ff4d6d,
+      #8b5cf6,
+      #ffffff
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    gradientFlow 8s linear infinite;
+}
+
+/* GRADIENT FLOW */
+
+@keyframes gradientFlow{
+
+  from{
+    background-position:0%;
+  }
+
+  to{
+    background-position:300%;
+  }
+}
+
+/* SCROLL */
+
+@keyframes piMove{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:992px){
+
+  .pi-wrapper{
+    padding-left:8px;
+  }
+
+  .pi-static{
+    font-size:30px;
+  }
+
+  .pi-slider-track{
+    animation-duration:1500s;
+  }
+
+  .pi-slider-track h2{
+    font-size:22px;
+  }
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .pi-slider-section{
+
+    margin-top:20px;
+
+    padding:10px 0;
+  }
+
+  .pi-wrapper{
+
+    padding-left:4px;
+
+    gap:6px;
+  }
+
+  .pi-static{
+
+    font-size:20px;
+  }
+
+  .pi-slider-track{
+
+    animation-duration:2000s;
+  }
+
+  .pi-slider-track h2{
+
+    font-size:14px;
+
+    letter-spacing:0.5px;
+
+    padding-right:12px;
+  }
+
+  .pi-slider-section::before{
+
+    font-size:80px;
+  }
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .pi-wrapper{
+
+    padding-left:2px;
+  }
+
+  .pi-static{
+
+    font-size:18px;
+  }
+
+  .pi-slider-track{
+
+    animation-duration:2500s;
+  }
+
+  .pi-slider-track h2{
+
+    font-size:13px;
+
+    padding-right:8px;
+  }
+
+}
